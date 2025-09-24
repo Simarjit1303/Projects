@@ -1,13 +1,13 @@
-﻿eu_sdg,dimension,dimension_label,unit,unit_label,geo,geo_label,time,obs_value,obs_status
-SUFI002,NR,Fossil fuel subsidies,NR,Number,EU27_2020,European Union - 27 countries (from 2020),2015,57330,
-SUFI002,NR,Fossil fuel subsidies,NR,Number,EU27_2020,European Union - 27 countries (from 2020),2016,57673,
-SUFI002,NR,Fossil fuel subsidies,NR,Number,EU27_2020,European Union - 27 countries (from 2020),2017,59255,
-SUFI002,NR,Fossil fuel subsidies,NR,Number,EU27_2020,European Union - 27 countries (from 2020),2018,61568,
-SUFI002,NR,Fossil fuel subsidies,NR,Number,EU27_2020,European Union - 27 countries (from 2020),2019,59116,
-SUFI002,NR,Fossil fuel subsidies,NR,Number,EU27_2020,European Union - 27 countries (from 2020),2020,56832,
-SUFI002,NR,Fossil fuel subsidies,NR,Number,EU27_2020,European Union - 27 countries (from 2020),2021,59605,
-SUFI002,NR,Fossil fuel subsidies,NR,Number,EU27_2020,European Union - 27 countries (from 2020),2022,136432,
-SUFI002,NR,Fossil fuel subsidies,NR,Number,EU27_2020,European Union - 27 countries (from 2020),2023,110996,
+eu_sdg,dimension,dimension_label,unit,unit_label,geo,geo_label,time,obs_value,obs_status
+SUFI002,NR,Fossil fuel subsidies,NR,Number,EU27_2020,European Union - 27 countries (from 2020),2015,57330.0,
+SUFI002,NR,Fossil fuel subsidies,NR,Number,EU27_2020,European Union - 27 countries (from 2020),2016,57673.0,
+SUFI002,NR,Fossil fuel subsidies,NR,Number,EU27_2020,European Union - 27 countries (from 2020),2017,59255.0,
+SUFI002,NR,Fossil fuel subsidies,NR,Number,EU27_2020,European Union - 27 countries (from 2020),2018,61568.0,
+SUFI002,NR,Fossil fuel subsidies,NR,Number,EU27_2020,European Union - 27 countries (from 2020),2019,59116.0,
+SUFI002,NR,Fossil fuel subsidies,NR,Number,EU27_2020,European Union - 27 countries (from 2020),2020,56832.0,
+SUFI002,NR,Fossil fuel subsidies,NR,Number,EU27_2020,European Union - 27 countries (from 2020),2021,59605.0,
+SUFI002,NR,Fossil fuel subsidies,NR,Number,EU27_2020,European Union - 27 countries (from 2020),2022,136432.0,
+SUFI002,NR,Fossil fuel subsidies,NR,Number,EU27_2020,European Union - 27 countries (from 2020),2023,110996.0,
 SUFI002,NR,Fossil fuel subsidies,NR,Number,AT,Austria,2015,396.55,E
 SUFI002,NR,Fossil fuel subsidies,NR,Number,AT,Austria,2016,397.615,E
 SUFI002,NR,Fossil fuel subsidies,NR,Number,AT,Austria,2017,381.604,E
@@ -56,7 +56,7 @@ SUFI002,NR,Fossil fuel subsidies,NR,Number,CZ,Czechia,2023,613.532,E
 SUFI002,NR,Fossil fuel subsidies,NR,Number,DE,Germany,2015,16498.993,E
 SUFI002,NR,Fossil fuel subsidies,NR,Number,DE,Germany,2016,16977.836,E
 SUFI002,NR,Fossil fuel subsidies,NR,Number,DE,Germany,2017,16440.838,E
-SUFI002,NR,Fossil fuel subsidies,NR,Number,DE,Germany,2018,15938,E
+SUFI002,NR,Fossil fuel subsidies,NR,Number,DE,Germany,2018,15938.0,E
 SUFI002,NR,Fossil fuel subsidies,NR,Number,DE,Germany,2019,14900.525,E
 SUFI002,NR,Fossil fuel subsidies,NR,Number,DE,Germany,2020,15608.76,E
 SUFI002,NR,Fossil fuel subsidies,NR,Number,DE,Germany,2021,14929.04,E
