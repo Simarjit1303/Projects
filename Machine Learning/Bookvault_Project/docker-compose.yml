@@ -1,0 +1,107 @@
+# ============================================================================
+# BookVault - Docker Compose Configuration
+# Production-ready deployment with health checks and volume persistence
+# ============================================================================
+
+version: '3.8'
+
+services:
+  bookvault:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bookvault-app
+    image: bookvault:latest
+
+    ports:
+      - "8501:8501"
+
+    environment:
+      # Required API Keys
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - GOOGLE_BOOKS_API_KEY=${GOOGLE_BOOKS_API_KEY:-}
+
+      # Database
+      - BOOKVAULT_DB=${BOOKVAULT_DB:-bookvault_cache.db}
+      - CACHE_TTL_HOURS=${CACHE_TTL_HOURS:-24}
+      - CACHE_SIZE=${CACHE_SIZE:-256}
+
+      # API Settings
+      - API_TIMEOUT=${API_TIMEOUT:-30}
+      - MAX_RETRIES=${MAX_RETRIES:-3}
+
+      # Retry Configuration
+      - RETRY_MAX_ATTEMPTS=${RETRY_MAX_ATTEMPTS:-3}
+      - RETRY_INITIAL_DELAY=${RETRY_INITIAL_DELAY:-1.0}
+      - RETRY_BACKOFF_MULTIPLIER=${RETRY_BACKOFF_MULTIPLIER:-2.0}
+
+      # OpenAI Model Settings
+      - OPENAI_MODEL=${OPENAI_MODEL:-gpt-4o-mini}
+      - OPENAI_MAX_TOKENS_SHORT=${OPENAI_MAX_TOKENS_SHORT:-50}
+      - OPENAI_MAX_TOKENS_MEDIUM=${OPENAI_MAX_TOKENS_MEDIUM:-150}
+      - OPENAI_MAX_TOKENS_LONG=${OPENAI_MAX_TOKENS_LONG:-500}
+      - OPENAI_TEMPERATURE_PRECISE=${OPENAI_TEMPERATURE_PRECISE:-0.1}
+      - OPENAI_TEMPERATURE_BALANCED=${OPENAI_TEMPERATURE_BALANCED:-0.3}
+      - OPENAI_TEMPERATURE_CREATIVE=${OPENAI_TEMPERATURE_CREATIVE:-0.7}
+
+      # UI Settings
+      - BOOKS_PER_PAGE_INITIAL=${BOOKS_PER_PAGE_INITIAL:-12}
+      - BOOKS_PER_LOAD_MORE=${BOOKS_PER_LOAD_MORE:-6}
+      - MAX_BOOKS_PER_GENRE=${MAX_BOOKS_PER_GENRE:-48}
+      - GENRE_API_DELAY_SECONDS=${GENRE_API_DELAY_SECONDS:-5}
+
+      # Image Processing
+      - OCR_RESIZE_FACTOR=${OCR_RESIZE_FACTOR:-2}
+      - MAX_IMAGE_SIZE_MB=${MAX_IMAGE_SIZE_MB:-10}
+
+      # Content Settings
+      - MAX_CAPTIONS=${MAX_CAPTIONS:-3}
+      - MAX_SEARCH_RESULTS=${MAX_SEARCH_RESULTS:-40}
+
+      # Rate Limiting
+      - RATE_LIMIT_ENABLED=${RATE_LIMIT_ENABLED:-true}
+      - MAX_SEARCHES_PER_MINUTE=${MAX_SEARCHES_PER_MINUTE:-100}
+      - MAX_API_CALLS_PER_MINUTE=${MAX_API_CALLS_PER_MINUTE:-50}
+
+      # Logging
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+
+      # Security
+      - ENABLE_INPUT_VALIDATION=${ENABLE_INPUT_VALIDATION:-true}
+
+    volumes:
+      # Persist logs
+      - ./logs:/app/logs
+
+      # Persist cache database
+      - bookvault-cache:/app
+
+    restart: unless-stopped
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+    networks:
+      - bookvault-network
+
+    # Resource limits (adjust based on your needs)
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+
+volumes:
+  bookvault-cache:
+    driver: local
+
+networks:
+  bookvault-network:
+    driver: bridge
