@@ -472,7 +472,7 @@ This project is licensed under the MIT License.
 
 ## 🙏 Acknowledgments
 
-- **OpenAI** for GPT-4o-mini API
+- **OpenAI** GPT-4o-mini API
 - **Google Books API** for book data
 - **Streamlit** for the amazing web framework
 - **Tesseract OCR** for image text extraction
