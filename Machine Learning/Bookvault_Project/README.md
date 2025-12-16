@@ -222,7 +222,7 @@ All settings are configurable via `.env` file:
 # API KEYS (Required)
 # =============================================================================
 OPENAI_API_KEY=your-key-here
-GOOGLE_BOOKS_API_KEY=                  # Optional, increases rate limits
+GOOGLE_BOOKS_API_KEY=your-key-here
 
 # =============================================================================
 # OpenAI Model Settings (NEW)
