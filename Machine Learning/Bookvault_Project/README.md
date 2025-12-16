@@ -147,8 +147,6 @@ BookVault_Project/
 - 📚 **Genre Browsing**: Curated genre collections with pagination
 - 💬 **AI-Generated Quotes**: Thematic quotes for each book
 - 🌐 **Multi-language Support**: International book discovery
-
-### New in v2.6
 - 🧪 **Test Suite**: 20 comprehensive unit tests with pytest
 - 📦 **Constants Module**: All magic numbers centralized
 - ♻️ **Zero Duplication**: Shared AI utilities eliminate duplicate code
@@ -469,10 +467,7 @@ This project is licensed under the MIT License.
 
 ---
 
-## 👨‍💻 Author
-
-**Your Name:**
-Simarjit Singh
+## 👨‍💻 Author - Simarjit Singh
 ---
 
 ## 🙏 Acknowledgments
