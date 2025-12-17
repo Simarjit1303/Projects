@@ -1,20 +1,15 @@
 # ============================================================================
 # BookVault - Docker Compose Configuration
-# Production-ready deployment with health checks and volume persistence
+# Production-ready deployment for AWS EC2
 # ============================================================================
-
-version: '3.8'
 
 services:
   bookvault:
-    build:
-      context: .
-      dockerfile: Dockerfile
     container_name: bookvault-app
-    image: bookvault:latest
+    image: simarjitsingh1303/bookvault:latest
 
     ports:
-      - "8501:8501"
+      - "80:8501"
 
     environment:
       # Required API Keys
@@ -70,10 +65,7 @@ services:
       - ENABLE_INPUT_VALIDATION=${ENABLE_INPUT_VALIDATION:-true}
 
     volumes:
-      # Persist logs
       - ./logs:/app/logs
-
-      # Persist cache database
       - bookvault-cache:/app
 
     restart: unless-stopped
@@ -87,16 +79,6 @@ services:
 
     networks:
       - bookvault-network
-
-    # Resource limits (adjust based on your needs)
-    deploy:
-      resources:
-        limits:
-          cpus: '2'
-          memory: 2G
-        reservations:
-          cpus: '0.5'
-          memory: 512M
 
 volumes:
   bookvault-cache:

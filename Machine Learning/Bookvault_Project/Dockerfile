@@ -1,9 +1,9 @@
 # ============================================================================
 # BookVault - Production Docker Image
-# Multi-stage build for optimized image size
+# Optimized slim build with security best practices
 # ============================================================================
 
-FROM python:3.13-slim as base
+FROM python:3.13-slim AS base
 
 # Set working directory
 WORKDIR /app

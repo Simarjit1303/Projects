@@ -36,7 +36,7 @@ class HomePage:
         self._render_search()
 
         # Genre browsing
-        self._render_genre_section()
+        self._render_genre_browsing()
 
     def _render_hero(self) -> None:
         """Render hero section"""
@@ -255,7 +255,7 @@ class HomePage:
             cache_key=st.session_state.cache_key
         )
 
-    def _render_genre_section(self) -> None:
+    def _render_genre_browsing(self) -> None:
         """Render genre browsing section"""
         st.markdown("""
         <div class="section-header">
