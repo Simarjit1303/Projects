@@ -1,1 +1,1 @@
-Here you can find all my projects realted to Data Science and fell free to explore.
+End-to-end Data Science & AI projects spanning GenAI, NLP, Computer Vision, and BI — from notebook to production
